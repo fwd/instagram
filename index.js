@@ -195,14 +195,12 @@ function transform(person) {
   
 }
 
-module.exports = async (config) => {
-
+module.exports = (config) => {
     return new Promise((resolve, reject) => {
-        scrape(config).then((user) => {
-            resolve(user)
+        scrape(config).then((profile) => {
+            resolve(profile)
         }).catch(e => {
           reject(e)
         })
     })
-
 }
