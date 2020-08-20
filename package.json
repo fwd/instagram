@@ -1,0 +1,11 @@
+{
+  "name": "@fwd/instagram",
+  "version": "0.0.1",
+  "description": "A NodeJS library for programmatically accesing Instagram.",
+  "main": "src/index.js",
+  "repository": "git@github.com:fwd/instagram.git",
+  "author": "Forward Miami <hello@forward.miami>",
+  "license": "MIT",
+  "dependencies": {},
+  "scripts": {}
+}
