@@ -16,6 +16,23 @@ npm install @fwd/instagram
 yarn add @fwd/instagram
 ```
 
+## Usage
+
+```javascript
+const instagram = require('@fwd/instagram');
+
+;(async () => {
+
+	var user = await instagram({
+		username: 'forwardmiami',
+		postLimit: 10 
+	})
+
+	console.log(user)
+
+})()
+```
+
 ## Author
 
 👤  **Forward Miami**
