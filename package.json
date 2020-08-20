@@ -6,6 +6,14 @@
   "repository": "git@github.com:fwd/instagram.git",
   "author": "Forward Miami <hello@forward.miami>",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "@fwd/server": "^1.0.20",
+    "archiver": "^3.0.0",
+    "async": "^2.6.2",
+    "json2csv": "^4.3.5",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "yargs": "^13.2.2"
+  },
   "scripts": {}
 }
