@@ -1,6 +1,6 @@
 {
   "name": "@fwd/instagram",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A NodeJS library for programmatically accesing Instagram.",
   "main": "src/index.js",
   "repository": "git@github.com:fwd/instagram.git",

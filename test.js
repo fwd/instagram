@@ -6,7 +6,7 @@ const instagram = require('./index')
 
 		var user = await instagram.profile('forwardmiami')
 
-		console.log(user.posts)
+		console.log(user)
 
 	} catch (e) {
 		console.log(e)
