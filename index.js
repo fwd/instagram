@@ -129,11 +129,11 @@ var identify = {
 * IG Scrapper
 */
 
-function scrape(config) {
+function scrape(username, limit) {
   return new Promise((resolve, reject) => {
     const instaTouch = require('./lib/index');
     let options = {
-        count: config.limit || config.postLimit || 80,
+        count: limit || 60,
         download: false,
         mediaType: "all",
         filetype: "both"
@@ -141,7 +141,7 @@ function scrape(config) {
     (async () => {
         let user;
         try {
-            user = await instaTouch.user(config.username, options)
+            user = await instaTouch.user(username, options)
             var response = {}
             response = user.profile
             response.posts = user._collector
@@ -171,7 +171,7 @@ function transform(person) {
             if (comment_hashtags) {
                 _.each(comment_hashtags, hashtag => {
                     if (item.hashtags) {
-                        item.hashtags.push(hashtag)
+                        item.hashtags.push(hashtag.trim())
                     }
                 })
             }
@@ -180,7 +180,14 @@ function transform(person) {
       item.hashtags = _.uniq(item.hashtags)
     })
 
-    // person.hashtags = _.uniq(_.flatten(person.posts.map(a => a.hashtags)))
+    _.each(person.posts, item => {
+      item.links = item.captionText ? item.captionText.match(/\bhttps?::\/\/\S+/gi) : []
+      item.links = _.uniq(item.links)
+    })
+
+    person.links = _.uniq(_.flatten(person.posts.map(a => a.links)))
+
+    person.hashtags = _.uniq(_.flatten(person.posts.map(a => a.hashtags)))
 
     // mentions
     _.each(person.posts, item => {
@@ -195,12 +202,14 @@ function transform(person) {
   
 }
 
-module.exports = (config) => {
-    return new Promise((resolve, reject) => {
-        scrape(config).then((profile) => {
-            resolve(profile)
-        }).catch(e => {
-          reject(e)
+module.exports = {
+    profile(username, limit) {
+        return new Promise((resolve, reject) => {
+            scrape(username, limit).then((profile) => {
+                resolve(transform(profile))
+            }).catch(e => {
+              reject(e)
+            })
         })
-    })
+    }
 }

@@ -4,10 +4,7 @@ const instagram = require('./index')
 
 	try {
 
-		var user = await instagram({
-			username: 'forwardmiami',
-			postLimit: 10 
-		})
+		var user = await instagram.profile('forwardmiami')
 
 		console.log(user.posts)
 
