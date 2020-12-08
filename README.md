@@ -39,7 +39,7 @@ const api = require('@fwd/api');
    "connected_fb_page": null,
    "followers": 9592,
    "following": 1973,
-   "posts":[],
+   "posts": [],
    "averageLike": 196.38,
    "engagementRate": 2,
    "advertisingValue": 1.98,
