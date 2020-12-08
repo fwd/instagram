@@ -39,14 +39,14 @@ const instagram = require('@fwd/instagram');
    "connected_fb_page": null,
    "followers": 9592,
    "following": 1973,
-   "posts": [],
+   "posts": [...],
    "averageLike": 196.38,
    "engagementRate": 2,
    "advertisingValue": 1.98,
-   "popularPost": {},
+   "popularPost": {...},
    "occupation": "n/a",
-   "links": [],
-   "hashtags": [],
+   "links": [...],
+   "hashtags": [...],
    "updated": "December 7, 2020"
 }
 ```
