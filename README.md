@@ -2,7 +2,7 @@
 
 <h1 align="center">@fwd/instagram 📷</h1>
 
-> A NodeJS library for programmatically accessing Instagram.
+> A NodeJS library for programmatically accessing Instagram posts and profile information.
 
 ## Install
 
