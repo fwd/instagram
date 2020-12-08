@@ -14,7 +14,7 @@ npm install @fwd/instagram
 
 ```js
 
-const api = require('@fwd/api');
+const instagram = require('@fwd/instagram');
 
 (async () => {
 	console.log( await instagram.profile('forwardmiami') )
